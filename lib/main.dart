@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:customer_ui/welcomeScreen/sigininform.dart';
+import 'package:customer_ui/welcomeScreen/signupform.dart';
 import 'package:customer_ui/welcomeScreen/welcome_page.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ import 'HomePage/homepage.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: SignInPage(),
+    home: Homepage(),
   ));
 }
 

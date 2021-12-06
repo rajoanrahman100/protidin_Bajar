@@ -1,3 +1,6 @@
+import 'package:customer_ui/components/button_widget.dart';
+import 'package:customer_ui/components/size_config.dart';
+import 'package:customer_ui/components/styles.dart';
 import 'package:flutter/material.dart';
 
 import 'otpverification.dart';
@@ -13,244 +16,103 @@ class _MyHomePageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+    var width = SizeConfig.screenWidth;
+    var height = SizeConfig.screenHeight;
+    var block = SizeConfig.block;
     return Scaffold(
       backgroundColor: Colors.white,
       //backgroundColor: Colors.indigo[50],
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
             SizedBox(height: 130,),
 
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0,0,0,0),
-              child: Container(
-                height: 70,
-                width: 340,
-                child: Image.asset("assets/img_20.png",fit: BoxFit.cover,),
+            SizedBox(
+              height: height * 0.06,
+              child: Image.asset(
+                "assets/img_20.png",
+                fit: BoxFit.contain,
               ),
             ),
 
-            SizedBox(height: 75,),
-
+            SizedBox(
+              height: 100,
+            ),
             Center(
-              child: Container(
-                height: 120,
-                width: 330,
-                child: Image.asset("assets/img_26.png"),
+              child: Text(
+                "Create New Account",
+                style: TextStyle(color: kBlackColor, fontSize: block * 5.0, fontWeight: FontWeight.w500),
               ),
             ),
 
+            sized20,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: TextFormField(
+                autofocus: false,
+                decoration: InputDecoration(
+                    fillColor: Colors.grey[100],
+                    filled: true,
+                    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide(color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide(color: Colors.white)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide(color: Colors.white)),
+                    hintText: "User name"),
+              ),
+            ),
+            sized20,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: TextFormField(
+                autofocus: false,
+                decoration: InputDecoration(
+                    fillColor: Colors.grey[100],
+                    filled: true,
+                    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide(color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide(color: Colors.white)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide(color: Colors.white)),
+                    hintText: "Email"),
+              ),
+            ),
+            sized20,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: TextFormField(
+                autofocus: false,
+                decoration: InputDecoration(
+                    fillColor: Colors.grey[100],
+                    filled: true,
+                    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide(color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide(color: Colors.white)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide(color: Colors.white)),
+                    hintText: "Password"),
+              ),
+            ),
+
+            SizedBox(height: 20,),
 
             Padding(
-              padding: const EdgeInsets.fromLTRB(10,10,10,10),
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 0.150,
-                    color:  Colors.cyan,
-                  ),
-                  //color: Color(0xFFEFFCF9),
-                  //color: Color(0xFFEEFAF1),
-                  color: Colors.deepPurple[50],
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey
-                          .withOpacity(0.1),
-                      spreadRadius: 5, //spread radius
-                      blurRadius: 5, // blur radius
-                      offset: Offset(
-                          0, 2),
-                    ),
-                  ],
-                ),
-
-                width: 320,
-                child:Row(
-                  children: [
-
-                    Padding(padding: const EdgeInsets.only(right: 10),),
-
-                    Container(
-                      height: 20,
-                      width: 25,
-                      // child: Image.network(
-                      //     "https://www.pngkit.com/png/full/208-2084108_cell-phone-icon-blue.png"
-                      // ),
-                    ),
-
-                    //Padding(padding: const EdgeInsets.only(right: 30),),
-
-                    Container(
-                      child: TextFormField(
-                        enabled: false,
-                        decoration: InputDecoration(
-
-                          hintText: 'username',
-                        ),
-                      ),
-                      width: 260,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10,10,10,10),
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 0.150,
-                    color:  Colors.cyan,
-                  ),
-                  //color: Color(0xFFEFFCF9),
-                  //color: Color(0xFFEEFAF1),
-                  color: Colors.deepPurple[50],
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey
-                          .withOpacity(0.1),
-                      spreadRadius: 5, //spread radius
-                      blurRadius: 5, // blur radius
-                      offset: Offset(
-                          0, 2),
-                    ),
-                  ],
-                ),
-
-                width: 320,
-                child:Row(
-                  children: [
-
-                    Padding(padding: const EdgeInsets.only(right: 10),),
-
-                    Container(
-                      height: 20,
-                      width: 25,
-                      // child: Image.network(
-                      //     "https://www.pngkit.com/png/full/208-2084108_cell-phone-icon-blue.png"
-                      // ),
-                    ),
-
-                    //Padding(padding: const EdgeInsets.only(right: 30),),
-
-                    Container(
-                      child: TextFormField(
-                        enabled: false,
-                        decoration: InputDecoration(
-
-                          hintText: 'email',
-                        ),
-                      ),
-                      width: 260,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10,10,10,10),
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 0.150,
-                    color:  Colors.cyan,
-                  ),
-                  //color: Color(0xFFEFFCF9),
-                  //color: Color(0xFFEEFAF1),
-                  color: Colors.deepPurple[50],
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey
-                          .withOpacity(0.1),
-                      spreadRadius: 5, //spread radius
-                      blurRadius: 5, // blur radius
-                      offset: Offset(
-                          0, 2),
-                    ),
-                  ],
-                ),
-
-                width: 320,
-                child:Row(
-                  children: [
-
-                    Padding(padding: const EdgeInsets.only(right: 10),),
-
-                    Container(
-                      height: 20,
-                      width: 25,
-                      // child: Image.network(
-                      //     "https://www.pngkit.com/png/full/208-2084108_cell-phone-icon-blue.png"
-                      // ),
-                    ),
-
-                    //Padding(padding: const EdgeInsets.only(right: 30),),
-
-                    Container(
-                      child: TextFormField(
-                        enabled: false,
-                        decoration: InputDecoration(
-
-                          hintText: 'password',
-                        ),
-                      ),
-                      width: 260,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-
-            SizedBox(height: 40,),
-
-            Container(
-              width: 340,
-              height: 50,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 0.150,
-                  color:  Colors.cyan,
-                ),
-
-                color: Colors.deepPurpleAccent,
-                borderRadius: BorderRadius.circular(30),
-                boxShadow: [
-
-                  BoxShadow(
-                    color: Colors.grey
-                        .withOpacity(0.1),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(
-                        0, 2),
-                  ),
-
-
-
-                ],
-              ),
-
-              child:InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => OTPPage()));
-                },
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      "Sign Up",style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  width: 160,
-                ),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: ButtonWidget(
+                height: height,
+                width: width,
+                child: Text("Sign Up", style: TextStyle(color: Colors.white)),
+                callback: () {},
               ),
             ),
 
