@@ -1,19 +1,17 @@
 import 'dart:async';
 
+import 'package:customer_ui/welcomeScreen/sigininform.dart';
 import 'package:customer_ui/welcomeScreen/welcome_page.dart';
 import 'package:flutter/material.dart';
 
-import 'welcomeScreen/changePassword.dart';
-import 'welcomeScreen/siginInForm.dart';
+import 'HomePage/homepage.dart';
 //import 'Language.dart';
 
 void main() {
-  runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: MyHomePage(),
-      )
-  );
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: SignInPage(),
+  ));
 }
 
 class MyHomePage extends StatefulWidget {
@@ -25,10 +23,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 10), ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WelcomePage()
-    )
-    )
-    );
+    Timer(
+        Duration(seconds: 3), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WelcomePage())));
   }
 
   @override
@@ -38,20 +34,14 @@ class _MyHomePageState extends State<MyHomePage> {
         body: SingleChildScrollView(
           child: Center(
             child: Container(
-              child: Image.asset("assets/ui1.png",fit: BoxFit.cover,),
+              child: Image.asset(
+                "assets/ui1.PNG",
+                fit: BoxFit.cover,
+              ),
               height: 950,
               width: 480,
             ),
           ),
-        )
-
-    );
+        ));
   }
-
-
-
 }
-
-
-
-

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'signUpForm.dart';
+import 'signupform.dart';
 //import 'Language.dart';
 
 
