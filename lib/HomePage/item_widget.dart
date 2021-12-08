@@ -16,22 +16,33 @@ class ProductItemsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height! * 0.25,
+      height: height! * 0.27,
       margin: EdgeInsets.only(left: 10,top: 5, bottom: 5),
       width: width! * 0.45,
       decoration: BoxDecoration(
           color: Colors.grey[100],
-          /*boxShadow: [
-            BoxShadow(
-              offset: Offset(0, 1),
-              blurRadius: 5,
-              color: Colors.black.withOpacity(0.3),
-            ),
-          ],*/
           borderRadius: BorderRadius.circular(10.0)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
+
         children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              height: height!*0.02,
+              margin: EdgeInsets.only(top: 10),
+              width: width!*0.15,
+              decoration: BoxDecoration(
+                  color: Colors.green
+              ),
+              child: Center(
+                child: Text(
+                  "15% Off",
+                  style: TextStyle(color: Colors.white, fontSize: block! * 3, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          ),
           Expanded(child: Image.asset(image!)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),

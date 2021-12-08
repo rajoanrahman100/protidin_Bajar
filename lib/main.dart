@@ -1,17 +1,20 @@
 import 'dart:async';
 
+import 'package:customer_ui/HomePage/grocer_offer/grocery_offer_page.dart';
+import 'package:customer_ui/HomePage/offer/offer_page.dart';
 import 'package:customer_ui/welcomeScreen/sigininform.dart';
 import 'package:customer_ui/welcomeScreen/signupform.dart';
 import 'package:customer_ui/welcomeScreen/welcome_page.dart';
 import 'package:flutter/material.dart';
 
+import 'HomePage/grocer_offer/grocery_details.dart';
 import 'HomePage/homepage.dart';
 //import 'Language.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Homepage(),
+    home: GroceryDetails(),
   ));
 }
 

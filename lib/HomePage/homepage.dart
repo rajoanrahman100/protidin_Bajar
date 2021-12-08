@@ -2,6 +2,7 @@ import 'package:customer_ui/components/size_config.dart';
 import 'package:customer_ui/components/styles.dart';
 import 'package:flutter/material.dart';
 
+import 'gorcery_item_widget.dart';
 import 'item_widget.dart';
 import 'offer_widget.dart';
 
@@ -24,10 +25,10 @@ class _MyHomePageState extends State<Homepage> {
           backgroundColor: Colors.white,
           //backgroundColor: Colors.indigo[50],
           body: SingleChildScrollView(
-              child: Column(children: [
-            Center(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+            child: Column(children: [
+              Center(
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(
@@ -78,11 +79,8 @@ class _MyHomePageState extends State<Homepage> {
                   ),
                 ),
               ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
-              child: Align(
+              sized10,
+              Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
                   height: 40,
@@ -100,64 +98,62 @@ class _MyHomePageState extends State<Homepage> {
                   ),
                 ),
               ),
-            ),
 
-            SizedBox(
-              height: 5,
-            ),
+              SizedBox(
+                height: 5,
+              ),
 
-            ///
-            Container(
-              //width: 320.0,
-              width: MediaQuery.of(context).size.width / 1.1,
-              height: 200.0,
-              decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/img_32.png"), fit: BoxFit.cover)),
+              ///
+              Container(
+                //width: 320.0,
+                width: MediaQuery.of(context).size.width / 1.1,
+                height: 200.0,
+                decoration:
+                    const BoxDecoration(image: DecorationImage(image: AssetImage("assets/img_32.png"), fit: BoxFit.cover)),
 
-              child: Row(
-                children: [
-                  SizedBox(
-                    height: 125,
-                    width: 200,
-                    child: Image.asset("assets/img_33.png"),
-                  ),
-                  Expanded(
-                    child: SizedBox(
-                      height: 105,
-                      child: Row(
-                        children: [
-                          Column(
-                            children: [
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                "Enjoy buy 1 get one offer\n throughout september",
-                                style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                height: 60,
-                                width: 110,
-                                child: Image.asset("assets/img_35.png"),
-                              ),
-                            ],
-                          ),
-                        ],
+                child: Row(
+                  children: [
+                    SizedBox(
+                      height: 125,
+                      width: 200,
+                      child: Image.asset("assets/img_33.png"),
+                    ),
+                    Expanded(
+                      child: SizedBox(
+                        height: 105,
+                        child: Row(
+                          children: [
+                            Column(
+                              children: [
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  "Enjoy buy 1 get one offer\n throughout september",
+                                  style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 60,
+                                  width: 110,
+                                  child: Image.asset("assets/img_35.png"),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
 
-            ///
+              ///
 
-            SizedBox(
-              height: 10,
-            ),
+              SizedBox(
+                height: 10,
+              ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: SizedBox(
+              SizedBox(
                 width: MediaQuery.of(context).size.width / 1.0,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -175,13 +171,10 @@ class _MyHomePageState extends State<Homepage> {
                   ],
                 ),
               ),
-            ),
-            sized10,
+              sized10,
 
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0, top: 0),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: FittedBox(
                   child: SizedBox(
                     //width: MediaQuery.of(context).size.width/1.1,
@@ -228,35 +221,29 @@ class _MyHomePageState extends State<Homepage> {
                   ),
                 ),
               ),
-            ),
 
-            SizedBox(
-              height: 15,
-            ),
-
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
+              SizedBox(
+                height: 15,
               ),
-              height: 685,
-              width: MediaQuery.of(context).size.width / 1,
-              child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Align(
+
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                //height: 685,
+                width: MediaQuery.of(context).size.width / 1,
+                child: Column(children: [
+                  Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Shop By Category",
                       style: TextStyle(color: Colors.black, fontSize: block * 4, fontWeight: FontWeight.w900),
                     ),
                   ),
-                ),
 
-                SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15.0, top: 5),
+                  SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
                       child: Row(
                         children: <Widget>[
                           Container(
@@ -355,27 +342,382 @@ class _MyHomePageState extends State<Homepage> {
                             ),
                           ),
                         ],
-                      ),
-                    )),
-                ////////
+                      )),
+                  ////////
 
-                SizedBox(
-                  height: 15,
-                ),
+                  SizedBox(
+                    height: 15,
+                  ),
 
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Align(
+                  Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Essentials- Top Deals",
                       style: TextStyle(color: Colors.black, fontSize: block * 4, fontWeight: FontWeight.w900),
                     ),
                   ),
-                ),
 
-                SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
+                  SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(children: [
+                        ProductItemsWidget(
+                          height: height,
+                          width: width,
+                          block: block,
+                          image: "assets/lays.png",
+                          productName: "Lays Premium Taste Chips-Orange",
+                          productWeight: "60g",
+                          productActualPrice: "BDT 125",
+                          productOfferPrice: "BDT 100",
+                        ),
+                        ProductItemsWidget(
+                          height: height,
+                          width: width,
+                          block: block,
+                          image: "assets/dove.png",
+                          productName: "Dove Natural Moyesture Skin Care ",
+                          productWeight: "60g",
+                          productActualPrice: "BDT 400",
+                          productOfferPrice: "BDT 300",
+                        ),
+                        ProductItemsWidget(
+                          height: height,
+                          width: width,
+                          block: block,
+                          image: "assets/cadebry.png",
+                          productName: "Cadbery Chocolate Milk Candy",
+                          productWeight: "20g",
+                          productActualPrice: "BDT 120",
+                          productOfferPrice: "BDT 110",
+                        ),
+                      ]))
+                ]),
+              ),
+              sized20,
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.0),
+                decoration: BoxDecoration(color: kPrimaryColor, borderRadius: BorderRadius.circular(10.0)),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "1-99 Store",
+                            style: TextStyle(color: Colors.white, fontSize: block * 5, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "view all",
+                            style: TextStyle(color: Colors.white, fontSize: block * 4, fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      sized10,
+                      Stack(
+                        children: [
+                          Image.asset("assets/posterfive.png"),
+                          Positioned(
+                            bottom: 10,
+                            left: 10,
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Everything under BDT 99",
+                                  style: TextStyle(color: Colors.white, fontSize: block * 5, fontWeight: FontWeight.bold),
+                                ),
+                                Icon(
+                                  Icons.arrow_right,
+                                  color: Colors.white,
+                                  size: block * 6,
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      sized10,
+                      SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(children: [
+                            ProductItemsWidget(
+                              height: height,
+                              width: width,
+                              block: block,
+                              image: "assets/lays.png",
+                              productName: "Lays Premium Taste Chips-Orange",
+                              productWeight: "60g",
+                              productActualPrice: "BDT 125",
+                              productOfferPrice: "BDT 100",
+                            ),
+                            ProductItemsWidget(
+                              height: height,
+                              width: width,
+                              block: block,
+                              image: "assets/dove.png",
+                              productName: "Dove Natural Moyesture Skin Care ",
+                              productWeight: "60g",
+                              productActualPrice: "BDT 400",
+                              productOfferPrice: "BDT 300",
+                            ),
+                            ProductItemsWidget(
+                              height: height,
+                              width: width,
+                              block: block,
+                              image: "assets/cadebry.png",
+                              productName: "Cadbery Chocolate Milk Candy",
+                              productWeight: "20g",
+                              productActualPrice: "BDT 120",
+                              productOfferPrice: "BDT 110",
+                            ),
+                          ]))
+                    ],
+                  ),
+                ),
+              ),
+              sized20,
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Grocery",
+                    style: TextStyle(color: kBlackColor, fontSize: block * 5, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "view all",
+                    style: TextStyle(color: kBlackColor, fontSize: block * 4, fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
+              sized20,
+
+              Stack(
+                children: [
+                  Image.asset("assets/posterone.png"),
+                  Positioned(
+                    bottom: 10,
+                    left: 10,
+                    child: Row(
+                      children: [
+                        Text(
+                          "Shop for daily needs",
+                          style: TextStyle(color: Colors.white, fontSize: block * 5, fontWeight: FontWeight.bold),
+                        ),
+                        Icon(
+                          Icons.arrow_right,
+                          color: Colors.white,
+                          size: block * 6,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              sized20,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/rin.png",
+                      title: "Essentials\nItem",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/whitechips.png",
+                      title: "Snacks\nItem",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/dove.png",
+                      title: "Personal\nCare",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/lays.png",
+                      title: "Chips\nChocolate",
+                    ),
+                  ],
+                ),
+              ),
+              sized20,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Grocery- Top Deals",
+                  style: TextStyle(color: Colors.black, fontSize: block * 4, fontWeight: FontWeight.w900),
+                ),
+              ),
+              sized20,
+              SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(children: [
+                    ProductItemsWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/lays.png",
+                      productName: "Lays Premium Taste Chips-Orange",
+                      productWeight: "60g",
+                      productActualPrice: "BDT 125",
+                      productOfferPrice: "BDT 100",
+                    ),
+                    ProductItemsWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/dove.png",
+                      productName: "Dove Natural Moyesture Skin Care ",
+                      productWeight: "60g",
+                      productActualPrice: "BDT 400",
+                      productOfferPrice: "BDT 300",
+                    ),
+                    ProductItemsWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/cadebry.png",
+                      productName: "Cadbery Chocolate Milk Candy",
+                      productWeight: "20g",
+                      productActualPrice: "BDT 120",
+                      productOfferPrice: "BDT 110",
+                    ),
+                  ])),
+              sized20,
+              Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("assets/img_61.png"), fit: BoxFit.cover),
+                  color: Colors.blue[400],
+                  borderRadius: BorderRadius.circular(5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.15),
+                      spreadRadius: 5, //spread radius
+                      blurRadius: 5, // blur radius
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
+                height: 200,
+                width: MediaQuery.of(context).size.width / 1.1,
+                child: Image.asset("assets/img_62.png"),
+              ),
+              sized20,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Beverages",
+                    style: TextStyle(color: kBlackColor, fontSize: block * 5, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "",
+                    style: TextStyle(color: kBlackColor, fontSize: block * 4, fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
+              sized20,
+
+              Stack(
+                children: [
+                  Image.asset("assets/postertwo.png"),
+                  Positioned(
+                    bottom: 10,
+                    left: 10,
+                    child: Row(
+                      children: [
+                        Text(
+                          "Sip it up",
+                          style: TextStyle(color: Colors.white, fontSize: block * 5, fontWeight: FontWeight.bold),
+                        ),
+                        Icon(
+                          Icons.arrow_right,
+                          color: Colors.white,
+                          size: block * 6,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              sized20,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/rin.png",
+                      title: "Essentials\nItem",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/whitechips.png",
+                      title: "Snacks\nItem",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/dove.png",
+                      title: "Personal\nCare",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/lays.png",
+                      title: "Chips\nChocolate",
+                    ),
+                  ],
+                ),
+              ),
+              sized20,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Grocery- Top Deals",
+                  style: TextStyle(color: Colors.black, fontSize: block * 4, fontWeight: FontWeight.w900),
+                ),
+              ),
+              sized20,
+              SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Row(children: [
                       ProductItemsWidget(
                         height: height,
@@ -407,1641 +749,389 @@ class _MyHomePageState extends State<Homepage> {
                         productActualPrice: "BDT 120",
                         productOfferPrice: "BDT 110",
                       ),
-                    ]))
-              ]),
-            ),
-
-
-            ///
-            Container(
-              height: 480,
-              width: MediaQuery.of(context).size.width / 1.1,
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/img_51.png"), fit: BoxFit.cover),
-                color: Colors.blue[400],
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.15),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(
-                        height: 45,
-                        width: 140,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            "1-99 store",
-                            style: TextStyle(color: Colors.white, fontSize: 21, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
-                      ),
-                      SizedBox(
-                        height: 45,
-                        width: 140,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            "view All",
-                            style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(
-                    height: 105,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    child: Image.asset("assets/img_52.png"),
-                  ),
-
-                  SizedBox(
-                    height: 20,
-                  ),
-
-                  ///
-                  SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                          padding: const EdgeInsets.only(left: 15.0, top: 5),
-                          child: Row(children: <Widget>[
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_56.png"), fit: BoxFit.cover),
-                                color: Colors.indigo[100],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "25% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_56.png"), fit: BoxFit.cover),
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_47.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @100Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_56.png"), fit: BoxFit.cover),
-                                color: Colors.blue[400],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 290,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 190,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ])))
-
-                  ///
-                ],
-              ),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            Container(
-              height: 650,
-              width: MediaQuery.of(context).size.width / 1.1,
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/img_54.png"), fit: BoxFit.cover),
-                color: Colors.blue[400],
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.15),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(
-                        height: 45,
-                        width: 140,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            "Grocery",
-                            style: TextStyle(color: Colors.black, fontSize: 21, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
-                      ),
-                      SizedBox(
-                        height: 45,
-                        width: 140,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            "     view All",
-                            style: TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(
-                    height: 105,
-                    //width: 330,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    child: Image.asset("assets/img_55.png"),
-                  ),
-
-                  SizedBox(
-                    height: 20,
-                  ),
-
-                  Container(
-                    color: Colors.indigo[100],
-                    height: 120,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    //child: Image.asset("assets/img_60.png"),
-                  ),
-
-                  SizedBox(
-                    height: 25,
-                  ),
-
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0),
-                        child: Text(
-                          "Grocery - Top Deals",
-                          style: TextStyle(color: Colors.black, fontSize: 21, fontWeight: FontWeight.w900),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 00,
-                  ),
-
-                  ///
-                  SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                          padding: const EdgeInsets.only(left: 15.0, top: 5),
-                          child: Row(children: <Widget>[
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.indigo[100],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "25% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_47.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @100Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.blue[400],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 290,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 190,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ])))
-
-                  ///
-                ],
-              ),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/img_61.png"), fit: BoxFit.cover),
-                color: Colors.blue[400],
-                borderRadius: BorderRadius.circular(5),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.15),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              height: 200,
-              width: MediaQuery.of(context).size.width / 1.1,
-              child: Image.asset("assets/img_62.png"),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            Container(
-              height: 650,
-              width: MediaQuery.of(context).size.width / 1.1,
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/img_54.png"), fit: BoxFit.cover),
-                color: Colors.blue[400],
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.15),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(
-                        height: 45,
-                        width: 140,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            "Beverages",
-                            style: TextStyle(color: Colors.black, fontSize: 21, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
-                      ),
-                      SizedBox(
-                        height: 45,
-                        width: 140,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            "     view All",
-                            style: TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(
-                    height: 105,
-                    //width: 330,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    child: Image.asset("assets/img_63.png"),
-                  ),
-
-                  SizedBox(
-                    height: 20,
-                  ),
-
-                  Container(
-                    color: Colors.indigo[100],
-                    height: 120,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    //child: Image.asset("assets/img_60.png"),
-                  ),
-
-                  SizedBox(
-                    height: 25,
-                  ),
-
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0),
-                        child: Text(
-                          "Grocery - Top Deals",
-                          style: TextStyle(color: Colors.black, fontSize: 21, fontWeight: FontWeight.w900),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 00,
-                  ),
-
-                  ///
-                  SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                          padding: const EdgeInsets.only(left: 15.0, top: 5),
-                          child: Row(children: <Widget>[
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.indigo[100],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "25% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_47.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @100Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.blue[400],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 290,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 190,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ])))
-
-                  ///
-                ],
-              ),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/img_65.png"), fit: BoxFit.cover),
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.15),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              height: 420,
-              width: MediaQuery.of(context).size.width / 1.1,
-              child: Image.asset("assets/img_66.png"),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            ///
-            Container(
-              height: 650,
-              width: MediaQuery.of(context).size.width / 1.1,
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/img_54.png"), fit: BoxFit.cover),
-                color: Colors.blue[400],
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.15),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(
-                        height: 45,
-                        width: 140,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            "Baby & Kids",
-                            style: TextStyle(color: Colors.black, fontSize: 21, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
-                      ),
-                      SizedBox(
-                        height: 45,
-                        width: 140,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            "     view All",
-                            style: TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(
-                    height: 105,
-                    //width: 330,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    child: Image.asset("assets/img_67.png"),
-                  ),
-
-                  SizedBox(
-                    height: 20,
-                  ),
-
-                  Container(
-                    color: Colors.indigo[100],
-                    height: 120,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    //child: Image.asset("assets/img_60.png"),
-                  ),
-
-                  SizedBox(
-                    height: 25,
-                  ),
-
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0),
-                        child: Text(
-                          "Grocery - Top Deals",
-                          style: TextStyle(color: Colors.black, fontSize: 21, fontWeight: FontWeight.w900),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 00,
-                  ),
-
-                  ///
-                  SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                          padding: const EdgeInsets.only(left: 15.0, top: 5),
-                          child: Row(children: <Widget>[
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.indigo[100],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "25% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_47.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @100Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.blue[400],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 290,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 190,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ])))
-
-                  ///
-                ],
-              ),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/img_69.png"), fit: BoxFit.cover),
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.15),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              height: 250,
-              width: MediaQuery.of(context).size.width / 1.1,
-              child: Image.asset("assets/img_70.png"),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            ///
-            Container(
-              height: 650,
-              width: MediaQuery.of(context).size.width / 1.1,
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/img_54.png"), fit: BoxFit.cover),
-                color: Colors.blue[400],
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.15),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
-                      SizedBox(
-                        height: 45,
-                        width: 200,
-                        child: Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text(
-                            "Fruits & vegetable",
-                            style: TextStyle(color: Colors.black, fontSize: 21, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
-                      ),
-                      SizedBox(
-                        height: 45,
-                        width: 140,
-                        child: Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text(
-                            "     view All",
-                            style: TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(
-                    height: 105,
-                    //width: 330,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    child: Image.asset("assets/img_71.png"),
-                  ),
-
-                  SizedBox(
-                    height: 20,
-                  ),
-
-                  Container(
-                    color: Colors.indigo[100],
-                    height: 120,
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    //child: Image.asset("assets/img_60.png"),
-                  ),
-
-                  SizedBox(
-                    height: 25,
-                  ),
-
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0),
-                        child: Text(
-                          "Grocery - Top Deals",
-                          style: TextStyle(color: Colors.black, fontSize: 21, fontWeight: FontWeight.w900),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 00,
-                  ),
-
-                  ///
-                  SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                          padding: const EdgeInsets.only(left: 15.0, top: 5),
-                          child: Row(children: <Widget>[
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.indigo[100],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "25% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 15),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 280,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 180,
-                                    width: 200,
-                                    child: Image.asset("assets/img_47.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @100Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage("assets/img_57.png"), fit: BoxFit.cover),
-                                color: Colors.blue[400],
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    spreadRadius: 5, //spread radius
-                                    blurRadius: 5, // blur radius
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              height: 290,
-                              width: 250,
-                              //color: Colors.cyan,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 120,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
-                                        child: Text(
-                                          "15% Offer",
-                                          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 190,
-                                    width: 200,
-                                    child: Image.asset("assets/img_45.png"),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //SizedBox(height: 10,),
-
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Text(
-                                            "    @700Tk",
-                                            style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w900),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 50,
-                                        width: 120,
-                                        child: Image.asset("assets/img_46.png"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ])))
-
-                  ///
-                ],
-              ),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/img_72.png"), fit: BoxFit.cover),
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.15),
-                    spreadRadius: 5, //spread radius
-                    blurRadius: 5, // blur radius
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              height: 130,
-              width: MediaQuery.of(context).size.width / 1.1,
-              child: Image.asset("assets/img_73.png"),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            Align(
-              alignment: Alignment.centerLeft,
-              child: SizedBox(
-                height: 115,
-                width: MediaQuery.of(context).size.width / 1.3,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 0.0),
-                  child: Image.asset("assets/img_74.png"),
-                ),
-              ),
-            ),
-
-            SizedBox(
-              height: 10,
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
+                    ]),
+                  )),
+              sized20,
+              Container(
                 decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 0.150,
-                    color: Colors.cyan,
-                  ),
+                  image: DecorationImage(image: AssetImage("assets/img_65.png"), fit: BoxFit.cover),
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
+                      color: Colors.grey.withOpacity(0.15),
                       spreadRadius: 5, //spread radius
                       blurRadius: 5, // blur radius
-                      offset: Offset(0, 2),
+                      offset: Offset(0, 3),
                     ),
                   ],
                 ),
-
+                height: 420,
                 width: MediaQuery.of(context).size.width / 1.1,
-                //width: 320,
+                child: Image.asset("assets/img_66.png"),
+              ),
+
+              SizedBox(
+                height: 20,
+              ),
+
+              ///
+              sized20,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Baby and kids",
+                    style: TextStyle(color: kBlackColor, fontSize: block * 5, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "",
+                    style: TextStyle(color: kBlackColor, fontSize: block * 4, fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
+              sized20,
+
+              Stack(
+                children: [
+                  Image.asset("assets/postertwo.png"),
+                  Positioned(
+                    bottom: 10,
+                    left: 10,
+                    child: Row(
+                      children: [
+                        Text(
+                          "Sip it up",
+                          style: TextStyle(color: Colors.white, fontSize: block * 5, fontWeight: FontWeight.bold),
+                        ),
+                        Icon(
+                          Icons.arrow_right,
+                          color: Colors.white,
+                          size: block * 6,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              sized20,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 20),
-                    ),
-                    Container(
-                      child: Icon(Icons.search_rounded),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 12),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/rin.png",
+                      title: "Essentials\nItem",
                     ),
                     SizedBox(
-                      child: TextFormField(
-                        enabled: false,
-                        decoration: InputDecoration(
-                          hintText: 'Search by name or brand',
-                        ),
-                      ),
-                      width: 240,
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/whitechips.png",
+                      title: "Snacks\nItem",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/dove.png",
+                      title: "Personal\nCare",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/lays.png",
+                      title: "Chips\nChocolate",
                     ),
                   ],
                 ),
               ),
-            ),
-
-            SizedBox(
-              height: 30,
-            ),
-
-            Align(
-              alignment: Alignment.centerLeft,
-              child: SizedBox(
-                height: 70,
-                width: MediaQuery.of(context).size.width / 1.3,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Image.asset("assets/img_75.png"),
+              sized20,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Grocery- Top Deals",
+                  style: TextStyle(color: Colors.black, fontSize: block * 4, fontWeight: FontWeight.w900),
                 ),
               ),
-            ),
+              sized20,
+              SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(children: [
+                    ProductItemsWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/lays.png",
+                      productName: "Lays Premium Taste Chips-Orange",
+                      productWeight: "60g",
+                      productActualPrice: "BDT 125",
+                      productOfferPrice: "BDT 100",
+                    ),
+                    ProductItemsWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/dove.png",
+                      productName: "Dove Natural Moyesture Skin Care ",
+                      productWeight: "60g",
+                      productActualPrice: "BDT 400",
+                      productOfferPrice: "BDT 300",
+                    ),
+                    ProductItemsWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/cadebry.png",
+                      productName: "Cadbery Chocolate Milk Candy",
+                      productWeight: "20g",
+                      productActualPrice: "BDT 120",
+                      productOfferPrice: "BDT 110",
+                    ),
+                  ])),
+              sized20,
 
-            SizedBox(
-              height: 40,
-            ),
-          ]))),
+              Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("assets/img_69.png"), fit: BoxFit.cover),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.15),
+                      spreadRadius: 5, //spread radius
+                      blurRadius: 5, // blur radius
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
+                height: 250,
+                width: MediaQuery.of(context).size.width / 1.1,
+                child: Image.asset("assets/img_70.png"),
+              ),
+
+              sized20,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Fruits & Vegetables",
+                    style: TextStyle(color: kBlackColor, fontSize: block * 5, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "",
+                    style: TextStyle(color: kBlackColor, fontSize: block * 4, fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
+              sized20,
+
+              Stack(
+                children: [
+                  Image.asset("assets/postertwo.png"),
+                  Positioned(
+                    bottom: 10,
+                    left: 10,
+                    child: Row(
+                      children: [
+                        Text(
+                          "Sip it up",
+                          style: TextStyle(color: Colors.white, fontSize: block * 5, fontWeight: FontWeight.bold),
+                        ),
+                        Icon(
+                          Icons.arrow_right,
+                          color: Colors.white,
+                          size: block * 6,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              sized20,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/rin.png",
+                      title: "Essentials\nItem",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/whitechips.png",
+                      title: "Snacks\nItem",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/dove.png",
+                      title: "Personal\nCare",
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    GroceryItemWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/lays.png",
+                      title: "Chips\nChocolate",
+                    ),
+                  ],
+                ),
+              ),
+              sized20,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Grocery- Top Deals",
+                  style: TextStyle(color: Colors.black, fontSize: block * 4, fontWeight: FontWeight.w900),
+                ),
+              ),
+              sized20,
+              SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(children: [
+                    ProductItemsWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/lays.png",
+                      productName: "Lays Premium Taste Chips-Orange",
+                      productWeight: "60g",
+                      productActualPrice: "BDT 125",
+                      productOfferPrice: "BDT 100",
+                    ),
+                    ProductItemsWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/dove.png",
+                      productName: "Dove Natural Moyesture Skin Care ",
+                      productWeight: "60g",
+                      productActualPrice: "BDT 400",
+                      productOfferPrice: "BDT 300",
+                    ),
+                    ProductItemsWidget(
+                      height: height,
+                      width: width,
+                      block: block,
+                      image: "assets/cadebry.png",
+                      productName: "Cadbery Chocolate Milk Candy",
+                      productWeight: "20g",
+                      productActualPrice: "BDT 120",
+                      productOfferPrice: "BDT 110",
+                    ),
+                  ])),
+              sized20,
+
+              SizedBox(
+                height: 20,
+              ),
+
+              Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("assets/img_72.png"), fit: BoxFit.cover),
+                  color: Colors.white,
+                ),
+                height: 130,
+                width: MediaQuery.of(context).size.width / 1.1,
+                child: Image.asset("assets/img_73.png"),
+              ),
+
+              SizedBox(
+                height: 20,
+              ),
+
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Didn't find\nwhat you\nwere looking for?",
+                  style: TextStyle(color: kPrimaryColor.withOpacity(0.5), fontSize: block * 10, fontWeight: FontWeight.bold),
+                ),
+              ),
+
+              SizedBox(
+                height: 20,
+              ),
+
+              TextFormField(
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    contentPadding: EdgeInsets.only(left: 15, bottom: 11, top: 11, right: 15),
+                    hintText: 'Search Here',
+                    prefixIcon: Icon(Icons.search)),
+              ),
+
+              SizedBox(
+                height: 20,
+              ),
+
+              Container(
+                height: height * 0.1,
+                width: width,
+                child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(
+                      Icons.call,
+                      color: kBlackColor,
+                      size: block * 10,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Call for query:",
+                          style: TextStyle(color: kBlackColor, fontSize: block * 7),
+                        ),
+                        Text(
+                          "01812-3456789",
+                          style: TextStyle(color: kBlackColor, fontSize: block * 7, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+
+              SizedBox(
+                height: 40,
+              ),
+            ]),
+          ))),
     );
   }
 }
