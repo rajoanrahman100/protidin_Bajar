@@ -5,14 +5,7 @@ import 'package:flutter/material.dart';
 import 'onboarding_1.dart';
 //import 'Language.dart';
 
-void main() {
-  runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: WelcomePage(),
-      )
-  );
-}
+
 
 class WelcomePage extends StatefulWidget {
   @override

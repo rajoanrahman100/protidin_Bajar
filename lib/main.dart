@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:customer_ui/HomePage/cart/cart_details.dart';
 import 'package:customer_ui/HomePage/grocer_offer/grocery_offer_page.dart';
 import 'package:customer_ui/HomePage/offer/offer_page.dart';
 import 'package:customer_ui/welcomeScreen/sigininform.dart';
@@ -14,7 +15,7 @@ import 'HomePage/homepage.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: GroceryDetails(),
+    home: WelcomePage(),
   ));
 }
 

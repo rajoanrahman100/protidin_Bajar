@@ -1,3 +1,4 @@
+import 'package:customer_ui/HomePage/homepage.dart';
 import 'package:customer_ui/components/button_widget.dart';
 import 'package:customer_ui/components/size_config.dart';
 import 'package:customer_ui/components/styles.dart';
@@ -112,7 +113,10 @@ class _MyHomePageState extends State<SignUpPage> {
                 height: height,
                 width: width,
                 child: Text("Sign Up", style: TextStyle(color: Colors.white)),
-                callback: () {},
+                callback: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()));
+
+                },
               ),
             ),
 
